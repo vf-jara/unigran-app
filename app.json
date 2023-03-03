@@ -1,30 +1,41 @@
 {
   "expo": {
-    "name": "unigran-app",
-    "slug": "unigran-app",
-    "version": "1.0.0",
+    "name": "Unigran Capital",
+    "slug": "AplicativoUnigran",
+    "version": "1.0.8",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/logo-nova.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#02152C"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aplicativounigran",
+      "buildNumber": "1.0.8",
+      "requireFullScreen": true,
+      "userInterfaceStyle": "automatic"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo-capital-bg-dark.png"
+    },
+    "android": {
+      "package": "com.aplicativounigran",
+      "permissions": [],
+      "userInterfaceStyle": "automatic",
+      "versionCode": 10
+    },
+    "extra": {
+      "eas": {
+        "projectId": "640efef1-3a4b-443f-bd08-5de13e583892"
+      }
     }
   }
 }
