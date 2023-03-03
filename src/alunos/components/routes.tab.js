@@ -106,7 +106,9 @@ export class Abas extends React.Component{
                 }}
                 gestureHandlerProps={{
                     maxPointers: 1,
-                    minDist: 50
+                    // minDist: 50
+                    activeOffsetX:50,
+                    activeOffsetY:50
                 }}
             >
                 <Tab.Screen 
