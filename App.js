@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {Dimensions } from 'react-native';
+import axios from 'axios'
+import 'react-native-gesture-handler';
+// import * as ScreenOrientation from 'expo-screen-orientation';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import Unigran from './Unigran'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+global.dadosUsuario = {informacoes:{nome:'',login:false}}
+global.apiBase = axios.create({
+    baseURL: 'https://apisapp.unigrancapital.com.br/index.php/',
 });
+global.versaoApp = '1.0'
+global.header = { headers: {"Authorization" : ''}}
+
+export default class App extends React.Component {
+  state = {
+    orientation:''
+  };
+
+  componentDidMount() {
+    Dimensions.addEventListener('change',({window: {width, height}})=>{
+      if(width < height){
+        this.setState({orientation:'Portait'})
+      }else{
+        this.setState({orientation:'landscape'})
+      }
+    })
+  };
+  render(){
+    return (
+        <Unigran/>
+    );
+  }
+}
